@@ -1,0 +1,22 @@
+<h1>Books</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Pages</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @books.each do |book| %>
+  <tr>
+    <td> <%= book.title %> </td>
+    <td> <%= book.author %> </td>
+    <td> <%= book.pages %> </td>
+    <td> <%= link_to "X", edit_book_path(id: book.id) %></td>
+    <td> <%= link_to "X", book_path(id: book.id), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<br>
+<%= link_to "New Book", new_book_path %>

@@ -1,0 +1,16 @@
+<h1>Add a new Book</h1>
+
+<%= render "shared/error_messages", model: @book %>
+
+<%= form_for @book do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <br>
+  <%= form.label :author %>
+  <%= form.text_field :author %>
+  <br>
+  <%= form.label :pages %>
+  <%= form.number_field :pages %>
+  <br>
+  <%= form.submit "Save" %>
+<% end %>
